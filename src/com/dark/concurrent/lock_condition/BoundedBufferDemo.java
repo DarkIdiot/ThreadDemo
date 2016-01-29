@@ -40,7 +40,7 @@ public class BoundedBufferDemo {
 class BoundedBuffer {
 	final Lock lock = new ReentrantLock();
 	/**
-	 * 为什么放入了2个Condition.如果使用一个Condition会出现什么问题？(当有同时有多个读、多个写线程的时候会出现问题)
+	 * 为什么放入了2个Condition.如果使用一个Condition会出现什么问题？(当有同时有多个读、写线程的时候会出现问题)
 	 */
 	final Condition notFull = lock.newCondition();
 	final Condition notEmpty = lock.newCondition();
