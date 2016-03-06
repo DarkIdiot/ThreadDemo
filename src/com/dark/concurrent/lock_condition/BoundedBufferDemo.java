@@ -16,7 +16,7 @@ public class BoundedBufferDemo {
 			for (int i = 0; i < 10000; i++) {
 				try {
 					bb.put(i);
-//					System.out.println(Thread.currentThread().getName()+" has put data : "+i+" in Buffer");
+					System.out.println(Thread.currentThread().getName()+" has put data : "+i+" in Buffer");
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -26,7 +26,7 @@ public class BoundedBufferDemo {
 			for (int i = 0; i < 10000; i++) {
 				try {
 					bb.take();
-//					System.out.println(Thread.currentThread().getName()+" has taken data : "+i+" from Buffer");
+					System.out.println(Thread.currentThread().getName()+" has taken data : "+i+" from Buffer");
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -57,7 +57,7 @@ class BoundedBuffer {
 			if (++putptr == items.length)
 				putptr = 0;
 			++count;
-//			System.out.println("putptr:"+putptr+" ,takeptr:"+takeptr+" ,count:"+count);
+			System.out.println("putptr:"+putptr+" ,takeptr:"+takeptr+" ,count:"+count);
 			notEmpty.signal();
 		} finally {
 			lock.unlock();
@@ -73,7 +73,7 @@ class BoundedBuffer {
 			if (++takeptr == items.length)
 				takeptr = 0;
 			--count;
-//			System.out.println("putptr:"+putptr+" ,takeptr:"+takeptr+" ,count:"+count);
+			System.out.println("putptr:"+putptr+" ,takeptr:"+takeptr+" ,count:"+count);
 			notFull.signal();
 			return x;
 		} finally {

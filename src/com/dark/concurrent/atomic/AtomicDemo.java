@@ -59,8 +59,8 @@ public class AtomicDemo {
 	}
 	public static void  atomicReferenceDemo(){
 		final AtomicReference<State> init = new AtomicReference<AtomicDemo.State>();
+		init.set(State.NEW);
 		for (int i = 0; i < 3; i++) {
-			init.set(State.NEW);
 			new Thread(new Runnable() {
 				@Override
 				public void run() {
@@ -68,7 +68,7 @@ public class AtomicDemo {
 					do {
 						State state =  init.get();
 						State temp = init.accumulateAndGet(State.INITIALIZING,(s,u) -> u );  		//使用lambda表达式。 
-						System.out.println("State"+temp);
+						System.out.println("State : "+temp);
 						System.out.println(Thread.currentThread().getName()+" : "+"state = "+ state+" , AtomicReference = "+init.get());
 						flag = init.compareAndSet(state, State.INITIALIZED);
 						System.out.println(Thread.currentThread().getName()+" : "+"flag = "+ flag+" , state = "+ state+" , AtomicReference = "+init.get());

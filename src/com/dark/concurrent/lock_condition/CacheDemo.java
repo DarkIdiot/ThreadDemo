@@ -7,7 +7,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
  * @version 1.0
  * @date 2016年1月27日 下午3:25:25
  */
-public class CatchDemo {
+public class CacheDemo {
 	public static void main(String[] args) {
 		CacheData data = new CacheData();
 		for (int i = 0; i < 3; i++) {

@@ -23,16 +23,16 @@ public class AtomicFieldUpdaterDemo {
 	 */
 	public static void atomicReferenceFieldUpdater() {
 		AtomicFieldUpdaterDemo atomicFieldUpdater = new AtomicFieldUpdaterDemo();
+		/**
+		 * 包含该字段的对象的类 	Class<U> tclass
+		 * 将被更新的对象的类		Class<W> vclass
+		 * 将被更新的字段的名称 	String fieldName
+		 */
 		AtomicReferenceFieldUpdater<AtomicFieldUpdaterDemo, Watchdog> atomicReferenceFieldUpdater = AtomicReferenceFieldUpdater.newUpdater(AtomicFieldUpdaterDemo.class, Watchdog.class,"dog");
 		for (int i = 0; i < 2; i++) {
 			new Thread(()->{
 				boolean flag;
 				do{
-					/**
-					 * 包含该字段的对象的类 	Class<U> tclass
-					 * 将被更新的对象的类		Class<W> vclass
-					 * 将被更新的字段的名称 	String fieldName
-					 */
 					Watchdog wd = null;
 					synchronized (AtomicFieldUpdaterDemo.class) {
 						count ++;
@@ -47,8 +47,6 @@ public class AtomicFieldUpdaterDemo {
 					 */
 					flag = atomicReferenceFieldUpdater.compareAndSet(atomicFieldUpdater, wd, new Watchdog(Thread.currentThread().getName()+"_WatchDog"));
 					System.out.println(Thread.currentThread().getName()+" flag  =  "+flag+", "+atomicReferenceFieldUpdater.get(atomicFieldUpdater));
-					
-					
 				}while(!flag);
 			}).start();
 		}

@@ -1,5 +1,6 @@
 package com.dark.concurrent.atomic;
 
+import java.util.concurrent.atomic.AtomicIntegerArray;
 import java.util.concurrent.atomic.AtomicReferenceArray;
 
 /**
