@@ -5,7 +5,7 @@ import java.util.Random;
 /**
  * @author idiot
  * @version 1.0
- * @date 2016Äê1ÔÂ19ÈÕ ÉÏÎç12:16:22
+ * @date 2016ï¿½ï¿½1ï¿½ï¿½19ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½12:16:22
  */
 public class ThreadLocalPractice {
 	/**
@@ -71,14 +71,13 @@ public class ThreadLocalPractice {
 					u.setPassword("user"+randomInt+"'s password");
 					user.set(u);
 					System.out.println("Thread:"+Thread.currentThread().getName()+" has loaded data -> "+u);
-					System.out.println("Thread:"+Thread.currentThread().getName()+" A.getData() -> "+user.get());
-					System.out.println("Thread:"+Thread.currentThread().getName()+" B.getData() -> "+user.get());
+					System.out.println("Thread:"+Thread.currentThread().getName()+" user -> "+user.get());
 				}
 			}).start();
 		}
 	}
 	/**
-	 * advance ThreadLocal demo (by used hungry singleton designer pattern )(struts 2 µÄactionµÄÉè¼ÆË¼Ïë.)
+	 * advance ThreadLocal demo (by used hungry singleton designer pattern )(struts 2 ï¿½ï¿½actionï¿½ï¿½ï¿½ï¿½ï¿½Ë¼ï¿½ï¿½.)
 	 */
 	static class  ThreadData{
 		
@@ -131,8 +130,7 @@ public class ThreadLocalPractice {
 					data.setUser(u);
 					data.setOthers("Others....."+randomInt);
 					System.out.println("Thread:"+Thread.currentThread().getName()+" has loaded data -> "+data);
-					System.out.println("Thread:"+Thread.currentThread().getName()+" A.getData() -> "+data);
-					System.out.println("Thread:"+Thread.currentThread().getName()+" B.getData() -> "+data);
+					System.out.println("Thread:"+Thread.currentThread().getName()+" user -> "+ ThreadData.ThreadContainer.get());
 				}
 			}).start();
 		}

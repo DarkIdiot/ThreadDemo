@@ -5,12 +5,12 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * Exchanger¿ÉÒÔÔÚÁ½¸öÏß³ÌÖ®¼ä½»»»Êý¾Ý£¬Ö»ÄÜÊÇ2¸öÏß³Ì£¬Ëû²»Ö§³Ö¸ü¶àµÄÏß³ÌÖ®¼ä»¥»»Êý¾Ý¡£
- * 		µ±Ïß³ÌAµ÷ÓÃExchange¶ÔÏóµÄexchange()·½·¨ºó£¬Ëû»áÏÝÈë×èÈû×´Ì¬£¬Ö±µ½Ïß³ÌBÒ²µ÷ÓÃÁË
- * 		exchange()·½·¨£¬È»ºóÒÔÏß³Ì°²È«µÄ·½Ê½½»»»Êý¾Ý£¬Ö®ºóÏß³ÌAºÍB¼ÌÐøÔËÐÐ
+ * Exchangerï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß³ï¿½Ö®ï¿½ä½»ï¿½ï¿½ï¿½ï¿½ï¿½Ý£ï¿½Ö»ï¿½ï¿½ï¿½ï¿½2ï¿½ï¿½ï¿½ß³Ì£ï¿½ï¿½ï¿½ï¿½ï¿½Ö§ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ß³ï¿½Ö®ï¿½ä»¥ï¿½ï¿½ï¿½ï¿½ï¿½Ý¡ï¿½
+ * 		ï¿½ï¿½ï¿½ß³ï¿½Aï¿½ï¿½ï¿½ï¿½Exchangeï¿½ï¿½ï¿½ï¿½ï¿½exchange()ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½Ö±ï¿½ï¿½ï¿½ß³ï¿½BÒ²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ * 		exchange()ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È»ï¿½ï¿½ï¿½ï¿½ï¿½ß³Ì°ï¿½È«ï¿½Ä·ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý£ï¿½Ö®ï¿½ï¿½ï¿½ß³ï¿½Aï¿½ï¿½Bï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  * @author idiot
  * @version 1.0
- * @date 2016Äê1ÔÂ30ÈÕ ÉÏÎç1:26:08
+ * @date 2016ï¿½ï¿½1ï¿½ï¿½30ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½1:26:08
  */
 public class ExchangerDemo {
 	public static void main(String[] args) {
@@ -30,6 +30,28 @@ public class ExchangerDemo {
 		service.execute(()->{
 			try {
 				String str = "'data for Thread 2.'";
+				System.out.println(Thread.currentThread().getName()+" will exchange the "+str+" out");
+				Thread.sleep((long) (Math.random()*5000));
+				String data = (String) exchanger.exchange(str);
+				System.out.println(Thread.currentThread().getName()+" has exchange the "+data+" out");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		});
+		service.execute(()->{
+			try {
+				String str = "'data for Thread 3.'";
+				System.out.println(Thread.currentThread().getName()+" will exchange the "+str+" out");
+				Thread.sleep((long) (Math.random()*5000));
+				String data = (String) exchanger.exchange(str);
+				System.out.println(Thread.currentThread().getName()+" has exchange the "+data+" out");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		});
+		service.execute(()->{
+			try {
+				String str = "'data for Thread 4.'";
 				System.out.println(Thread.currentThread().getName()+" will exchange the "+str+" out");
 				Thread.sleep((long) (Math.random()*5000));
 				String data = (String) exchanger.exchange(str);
