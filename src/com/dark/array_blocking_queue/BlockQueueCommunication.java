@@ -6,11 +6,11 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * ÓÃÁ½¸ö¾ßÓĞ1¸ö¿Õ¼äµÄ¶ÓÁĞÀ´ÊµÏÖÍ¬²½Í¨ÖªµÄ¹¦ÄÜ¡£
+ * ç”¨ä¸¤ä¸ªå…·æœ‰1ä¸ªç©ºé—´çš„é˜Ÿåˆ—æ¥å®ç°åŒæ­¥é€šçŸ¥çš„åŠŸèƒ½ã€‚
  * 
  * @author idiot
  * @version 1.0
- * @date 2016Äê2ÔÂ2ÈÕ ÏÂÎç10:21:42
+ * @date 2016å¹´2æœˆ2æ—¥ ä¸‹åˆ10:21:42
  */
 public class BlockQueueCommunication {
 	public static void main(String[] args) {

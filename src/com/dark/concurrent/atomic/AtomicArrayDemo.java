@@ -1,12 +1,11 @@
 package com.dark.concurrent.atomic;
 
-import java.util.concurrent.atomic.AtomicIntegerArray;
 import java.util.concurrent.atomic.AtomicReferenceArray;
 
 /**
  * @author idiot
  * @version 1.0
- * @date 2016Äê1ÔÂ25ÈÕ ÏÂÎç2:44:34
+ * @date 2016å¹´1æœˆ25æ—¥ ä¸‹åˆ2:44:34
  */
 public class AtomicArrayDemo {
 	private static final int  ARRAYSIZE = 2;

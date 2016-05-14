@@ -6,7 +6,7 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * @author idiot
  * @version 1.0
- * @date 2016Äê1ÔÂ28ÈÕ ÏÂÎç5:23:35
+ * @date 2016å¹´1æœˆ28æ—¥ ä¸‹åˆ5:23:35
  */
 public class ConditionCommunicationDemo {
 	public static void main(String[] args) {

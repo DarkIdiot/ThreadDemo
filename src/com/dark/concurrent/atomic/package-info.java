@@ -1,5 +1,5 @@
 /**
- * java.util.concurrent.atomic 包下面的典型类的使用demo
+ * java.util.concurrent.atomic 鍖呬笅闈㈢殑鍏稿瀷绫荤殑浣跨敤demo
  */
 package com.dark.concurrent.atomic;
 

@@ -3,7 +3,7 @@ package com.dark.thread_scope_share_data;
 /**
  * @author idiot
  * @version 1.0
- * @date 2016Äê1ÔÂ22ÈÕ ÉÏÎç11:07:35
+ * @date 2016å¹´1æœˆ22æ—¥ ä¸Šåˆ11:07:35
  */
 public class MultiThreadShareData {
 	private int i = 10000;

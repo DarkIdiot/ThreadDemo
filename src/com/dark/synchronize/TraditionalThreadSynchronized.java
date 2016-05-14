@@ -1,11 +1,11 @@
 package com.dark.synchronize;
 
 /**
- * ʵ�����߳�ѭ��10�Σ����߳�ѭ��100�Σ���/���̶߳�ѭ��50��
+ * 实现子线程循环10次，主线程循环100次，主/子线程都循环50次
  * 
  * @author idiot
  * @version 1.0
- * @date 2016��1��17�� ����9:45:08
+ * @date 2016年1月17日 下午9:45:08
  */
 public class TraditionalThreadSynchronized {
 
@@ -13,7 +13,7 @@ public class TraditionalThreadSynchronized {
 	 *  error demo 1 by used {@link TraditionalThreadSynchronized.class}
 	 */
 	/**
-	 * �����ڲ�����Է�����ľ�̬������
+	 * 匿名内部类可以访问类的静态变量。
 	 */
 	private static boolean ruleFlag = false;                   
 	public  static void SychronizeDemo() {
@@ -37,7 +37,7 @@ public class TraditionalThreadSynchronized {
 					ruleFlag = false;
 					/**
 					 * error demo by {@link java.lang.IllegalMonitorStateException}
-					 * Υ���ļ��״̬�쳣����ĳ���߳���ͼ�ȴ�һ���Լ�����ӵ�еĶ���O���ļ��������֪ͨ�����̵߳ȴ��ö���O���ļ����ʱ���׳����쳣��
+					 * 违法的监控状态异常。当某个线程试图等待一个自己并不拥有的对象（O）的监控器或者通知其他线程等待该对象（O）的监控器时，抛出该异常。
 					 */
 					TraditionalThreadSynchronized.class.notify();
 				}
@@ -48,7 +48,7 @@ public class TraditionalThreadSynchronized {
 				try {
 					/**
 					 * error demo by {@link java.lang.IllegalMonitorStateException}
-					 * Υ���ļ��״̬�쳣����ĳ���߳���ͼ�ȴ�һ���Լ�����ӵ�еĶ���O���ļ��������֪ͨ�����̵߳ȴ��ö���O���ļ����ʱ���׳����쳣��
+					 * 违法的监控状态异常。当某个线程试图等待一个自己并不拥有的对象（O）的监控器或者通知其他线程等待该对象（O）的监控器时，抛出该异常。
 					 */
 					TraditionalThreadSynchronized.class.wait();
 				} catch (InterruptedException e) {
@@ -64,7 +64,7 @@ public class TraditionalThreadSynchronized {
 			ruleFlag = true;
 			/**
 			 * error demo by {@link java.lang.IllegalMonitorStateException}
-			 * Υ���ļ��״̬�쳣����ĳ���߳���ͼ�ȴ�һ���Լ�����ӵ�еĶ���O���ļ��������֪ͨ�����̵߳ȴ��ö���O���ļ����ʱ���׳����쳣��
+			 * 违法的监控状态异常。当某个线程试图等待一个自己并不拥有的对象（O）的监控器或者通知其他线程等待该对象（O）的监控器时，抛出该异常。
 			 */
 			TraditionalThreadSynchronized.class.notify();
 		}
@@ -140,7 +140,7 @@ public class TraditionalThreadSynchronized {
 					ruleFlag2 = false;
 					/**
 					 * error demo by {@link java.lang.IllegalMonitorStateException}
-					 * Υ���ļ��״̬�쳣����ĳ���߳���ͼ�ȴ�һ���Լ�����ӵ�еĶ���O���ļ��������֪ͨ�����̵߳ȴ��ö���O���ļ����ʱ���׳����쳣��
+					 * 违法的监控状态异常。当某个线程试图等待一个自己并不拥有的对象（O）的监控器或者通知其他线程等待该对象（O）的监控器时，抛出该异常。
 					 */
 					TraditionalThreadSynchronized.this.notify();
 				}
@@ -151,7 +151,7 @@ public class TraditionalThreadSynchronized {
 				try {
 					/**
 					 * error demo by {@link java.lang.IllegalMonitorStateException}
-					 * Υ���ļ��״̬�쳣����ĳ���߳���ͼ�ȴ�һ���Լ�����ӵ�еĶ���O���ļ��������֪ͨ�����̵߳ȴ��ö���O���ļ����ʱ���׳����쳣��
+					 * 违法的监控状态异常。当某个线程试图等待一个自己并不拥有的对象（O）的监控器或者通知其他线程等待该对象（O）的监控器时，抛出该异常。
 					 */
 					this.wait();
 				} catch (InterruptedException e) {
@@ -167,7 +167,7 @@ public class TraditionalThreadSynchronized {
 			ruleFlag2 = true;
 			/**
 			 * error demo by {@link java.lang.IllegalMonitorStateException}
-			 * Υ���ļ��״̬�쳣����ĳ���߳���ͼ�ȴ�һ���Լ�����ӵ�еĶ���O���ļ��������֪ͨ�����̵߳ȴ��ö���O���ļ����ʱ���׳����쳣��
+			 * 违法的监控状态异常。当某个线程试图等待一个自己并不拥有的对象（O）的监控器或者通知其他线程等待该对象（O）的监控器时，抛出该异常。
 			 */
 			this.notify();
 		}
@@ -219,14 +219,14 @@ public class TraditionalThreadSynchronized {
 	}
 	/**
 	 * synchronized demo v1
-	 * ���Ƿ���Ҫ��������Դ������ڲ������У������Ƿ����̴߳����С�(�������ķ�ʽ���)
+	 * 锁是放在要操作的资源的类的内部方法中，而不是放在线程代码中。(面向对象的方式编程)
 	 */
 	class Business {
 		private boolean ruleFlag = false;
 		public synchronized void sub(int i) {
 			/*
-			 * ���̵߳������� �˴� while �� if û��̫�������Ȼ��һ��ʹ��while�϶ࡣ�˴�����Ԥ��ruleFlag����û�б��޸Ķ����������̵߳�������������̼߳�������ȴ��������Ǽ���ִ����ȥ��
-			 * ��Ϊwhile�İ�ȫ����ȻҪ��һЩ��������Ч��Ԥ�����ٻ��ѡ�
+			 * 在线程的运用中 此处 while 与 if 没有太大的区别，然而一般使用while较多。此处可以预防ruleFlag变量没有被修改而唤醒所有线程的情况，可以让线程继续进入等待，而不是继续执行下去。
+			 * 因为while的安全性显然要高一些，可以有效的预防被假唤醒。
 			 * if (ruleFlag) {
 				try {
 					this.wait();
@@ -247,17 +247,17 @@ public class TraditionalThreadSynchronized {
 			}
 			ruleFlag = true;
 			/**
-			 * ΪʲôҪ�ڴ������ִ��notify()������
-			 *    ����ֵ�2���߳�ͬʱ��ʼ��ʱ��sub Thread ��һ��������Ȼ��һֱ���ڵȴ�״̬������ruleFlag�ı䣬�ֵ�sub Thread 
-			 *    Ҳһֱ�ȴ���ȥ����ʱ�����Ҫmian Thread �����һ�������֪ͨ�����������߳�
+			 * 为什么要在代码最后执行notify()方法？
+			 *    会出现当2个线程同时开始的时候，sub Thread 慢一步再运行然后一直处于等待状态，就算ruleFlag改变，轮到sub Thread 
+			 *    也一直等待下去，这时候就需要mian Thread 的最后一句代码来通知、唤醒所有线程
 			 */
 			this.notify();
 		}
 
 		public synchronized void main(int i) {
 			/*
-			 * ���̵߳������� �˴� while �� if û��̫�������Ȼ��һ��ʹ��while�϶ࡣ�˴�����Ԥ��ruleFlag����û�б��޸Ķ����������̵߳�������������̼߳�������ȴ��������Ǽ���ִ����ȥ��
-			 * ��Ϊwhile�İ�ȫ����ȻҪ��һЩ��������Ч��Ԥ�����ٻ��ѡ�
+			 * 在线程的运用中 此处 while 与 if 没有太大的区别，然而一般使用while较多。此处可以预防ruleFlag变量没有被修改而唤醒所有线程的情况，可以让线程继续进入等待，而不是继续执行下去。
+			 * 因为while的安全性显然要高一些，可以有效的预防被假唤醒。
 			 * if (!ruleFlag) {
 				try {
 					this.wait();
@@ -278,9 +278,9 @@ public class TraditionalThreadSynchronized {
 			}
 			ruleFlag = false;
 			/**
-			 * ΪʲôҪ�ڴ������ִ��notify()������
-			 *    ����ֵ�2���߳�ͬʱ��ʼ��ʱ��main Thread ��ǰ����Ȼ��һֱ���ڵȴ�״̬������ruleFlag�ı䣬�ֵ�main Thread 
-			 *    Ҳһֱ�ȴ���ȥ����ʱ�����Ҫsub Thread �����һ�������֪ͨ�����������߳�
+			 * 为什么要在代码最后执行notify()方法？
+			 *    会出现当2个线程同时开始的时候，main Thread 提前运行然后一直处于等待状态，就算ruleFlag改变，轮到main Thread 
+			 *    也一直等待下去，这时候就需要sub Thread 的最后一句代码来通知、唤醒所有线程
 			 */
 			this.notify();
 		}
@@ -312,9 +312,9 @@ public class TraditionalThreadSynchronized {
 //		TraditionalThreadSynchronized.SychronizeDemoV1();
 	}
 	/**
-	 * note: �����ڲ�����õķ����ھֲ���������Ϊfinal;
-	 * ���ȣ��ڲ��౻�����ʱ�������һ���������ڲ����.class�ļ�������ļ��������ⲿ����ͬһclass�ļ��С�
-	 * ���ⲿ�ഫ�Ĳ������ڲ������ʱ����java����ĽǶ�������ֱ�ӵĵ������磺
+	 * note: 匿名内部类调用的方法内局部变量必须为final;
+	 * 首先，内部类被编译的时候会生成一个单独的内部类的.class文件，这个文件并不与外部类在同一class文件中。
+	 * 当外部类传的参数被内部类调用时，从java程序的角度来看是直接的调用例如：
 	 *  public void dosome(final String a,final int b){ 
 	 *  	class Dosome{
 	 *  		public void dosome(){
@@ -323,7 +323,7 @@ public class TraditionalThreadSynchronized {
 	 *  	Dosome some=new Dosome();
 	 * 		some.dosome();
 	 * }
-	 * �Ӵ��������������Ǹ��ڲ���ֱ�ӵ��õ�a������b����������ʵ���ϲ��ǣ���java�����������Ժ�ʵ�ʵĲ���������
+	 * 从代码来看好像是那个内部类直接调用的a参数和b参数，但是实际上不是，在java编译器编译以后实际的操作代码是
 	 * class Outer$Dosome{ 
 	 * 		public Dosome(final String a,final int b){
 	 * 			this.Dosome$a=a; 
@@ -333,7 +333,7 @@ public class TraditionalThreadSynchronized {
 	 * 			System.out.println(this.Dosome$a+this.Dosome$b);
 	 * 		}
 	 * }
-	 * �����ϴ��뿴�����ڲ��ಢ����ֱ�ӵ��÷����������Ĳ����������ڲ��ཫ�������Ĳ���ͨ���Լ��Ĺ��������ݵ����Լ����ڲ���
-	 * �Լ��ڲ��ķ������õ�ʵ�����Լ������Զ������ⲿ�෽���Ĳ�����
+	 * 从以上代码看来，内部类并不是直接调用方法传进来的参数，而是内部类将传进来的参数通过自己的构造器备份到了自己的内部，
+	 * 自己内部的方法调用的实际是自己的属性而不是外部类方法的参数。
 	 */
 }

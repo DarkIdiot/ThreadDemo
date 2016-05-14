@@ -3,7 +3,7 @@ package com.dark.mutually_exclusive;
 /**
  * @author idiot
  * @version 1.0
- * @date 2016Äê1ÔÂ17ÈÕ ÏÂÎç6:42:30
+ * @date 2016å¹´1æœˆ17æ—¥ ä¸‹åˆ6:42:30
  */
 public class TraditionalThreadSynchronized {
 	/**

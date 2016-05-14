@@ -1,6 +1,5 @@
 package com.dark.callable_future;
 
-import java.util.Iterator;
 import java.util.Random;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CompletionService;
@@ -12,7 +11,7 @@ import java.util.concurrent.Executors;
 /**
  * @author idiot
  * @version 1.0
- * @date 2016Äê1ÔÂ26ÈÕ ÏÂÎç4:17:04
+ * @date 2016å¹´1æœˆ26æ—¥ ä¸‹åˆ4:17:04
  */
 public class CompletionServiceDemo {
 	public static void main(String[] args) {

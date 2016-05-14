@@ -1,18 +1,17 @@
 package com.dark.concurrent.atomic;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
-import java.util.function.BinaryOperator;
 
 
 /**
  * @author idiot
  * @version 1.0
- * @date 2016Äê1ÔÂ25ÈÕ ÏÂÎç4:25:58
+ * @date 2016å¹´1æœˆ25æ—¥ ä¸‹åˆ4:25:58
  */
 public class AtomicFieldUpdaterDemo {
 	/**
-	 * ¸Ã×Ö¶Î×÷ÓÃÓò²»ÄÜÎªprivate.()
-	 * ¸Ã×Ö¶Î±ØĞë±» volatileĞŞÊÎ.(java.lang.IllegalArgumentException: Must be volatile type)
-	 * 		volatileµÄ×÷ÓÃÊÇ£º ×÷ÎªÖ¸Áî¹Ø¼ü×Ö£¬È·±£±¾ÌõÖ¸Áî²»»áÒò±àÒëÆ÷µÄÓÅ»¯¶øÊ¡ÂÔ£¬ÇÒÒªÇóÃ¿´ÎÖ±½Ó¶ÁÖµ.
+	 * è¯¥å­—æ®µä½œç”¨åŸŸä¸èƒ½ä¸ºprivate.()
+	 * è¯¥å­—æ®µå¿…é¡»è¢« volatileä¿®é¥°.(java.lang.IllegalArgumentException: Must be volatile type)
+	 * 		volatileçš„ä½œç”¨æ˜¯ï¼š ä½œä¸ºæŒ‡ä»¤å…³é”®å­—ï¼Œç¡®ä¿æœ¬æ¡æŒ‡ä»¤ä¸ä¼šå› ç¼–è¯‘å™¨çš„ä¼˜åŒ–è€Œçœç•¥ï¼Œä¸”è¦æ±‚æ¯æ¬¡ç›´æ¥è¯»å€¼.
 	 */
 	private volatile Watchdog dog;
 	
@@ -24,9 +23,9 @@ public class AtomicFieldUpdaterDemo {
 	public static void atomicReferenceFieldUpdater() {
 		AtomicFieldUpdaterDemo atomicFieldUpdater = new AtomicFieldUpdaterDemo();
 		/**
-		 * °üº¬¸Ã×Ö¶ÎµÄ¶ÔÏóµÄÀà 	Class<U> tclass
-		 * ½«±»¸üĞÂµÄ¶ÔÏóµÄÀà		Class<W> vclass
-		 * ½«±»¸üĞÂµÄ×Ö¶ÎµÄÃû³Æ 	String fieldName
+		 * åŒ…å«è¯¥å­—æ®µçš„å¯¹è±¡çš„ç±» 	Class<U> tclass
+		 * å°†è¢«æ›´æ–°çš„å¯¹è±¡çš„ç±»		Class<W> vclass
+		 * å°†è¢«æ›´æ–°çš„å­—æ®µçš„åç§° 	String fieldName
 		 */
 		AtomicReferenceFieldUpdater<AtomicFieldUpdaterDemo, Watchdog> atomicReferenceFieldUpdater = AtomicReferenceFieldUpdater.newUpdater(AtomicFieldUpdaterDemo.class, Watchdog.class,"dog");
 		for (int i = 0; i < 2; i++) {
@@ -41,9 +40,9 @@ public class AtomicFieldUpdaterDemo {
 					wd = atomicReferenceFieldUpdater.accumulateAndGet(atomicFieldUpdater,wd, (o,n)->n);
 					System.out.println(Thread.currentThread().getName()+" "+wd);
 					/**
-					 * ±»¸üĞÂµÄ¶ÔÏóÊµÀı	T obj
-					 * ÆÚÍûµÄreferenceFieldÈ¡Öµ V expect
-					 * ĞèĞÂÉèÖÃµÄreferenceFieldÈ¡Öµ  V update
+					 * è¢«æ›´æ–°çš„å¯¹è±¡å®ä¾‹	T obj
+					 * æœŸæœ›çš„referenceFieldå–å€¼ V expect
+					 * éœ€æ–°è®¾ç½®çš„referenceFieldå–å€¼  V update
 					 */
 					flag = atomicReferenceFieldUpdater.compareAndSet(atomicFieldUpdater, wd, new Watchdog(Thread.currentThread().getName()+"_WatchDog"));
 					System.out.println(Thread.currentThread().getName()+" flag  =  "+flag+", "+atomicReferenceFieldUpdater.get(atomicFieldUpdater));

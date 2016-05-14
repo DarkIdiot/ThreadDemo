@@ -1,23 +1,23 @@
 package com.dark.traditional_thread;
 
 /**
- * ¶àÏß³Ì»úÖÆ»áµ¼ÖÂĞÔÄÜ±äµÍ£»µ«ÊÇ¶àÏß³Ì¼¼ÊõÔËÓÃµ½·şÎñÆ÷µÄºóÌ¨£¬»áÊ¹ÓÃÏß³Ì¼¼ÊõÎªÓÃ»§Ìá¸ß´ø¿í£¬½ø¶øÈÃÓÃ»§¸ĞÊÜµ½ÏìÓ¦ËÙ¶ÈµÄÌáÉı¡£
+ * å¤šçº¿ç¨‹æœºåˆ¶ä¼šå¯¼è‡´æ€§èƒ½å˜ä½ï¼›ä½†æ˜¯å¤šçº¿ç¨‹æŠ€æœ¯è¿ç”¨åˆ°æœåŠ¡å™¨çš„åå°ï¼Œä¼šä½¿ç”¨çº¿ç¨‹æŠ€æœ¯ä¸ºç”¨æˆ·æé«˜å¸¦å®½ï¼Œè¿›è€Œè®©ç”¨æˆ·æ„Ÿå—åˆ°å“åº”é€Ÿåº¦çš„æå‡ã€‚
  * @author idiot
  * @version 1.0
- * @date 2016Äê1ÔÂ15ÈÕ ÉÏÎç9:00:08
+ * @date 2016å¹´1æœˆ15æ—¥ ä¸Šåˆ9:00:08
  */
 public class TraditionalThread {
 	public static void main(String[] args) {
 		
 		/**
-		 * new Thread µÄ×ÓÀàÊµÀı£¬¸²¸Ç¸¸ÀàThreadµÄrun()·½·¨¡£
+		 * new Thread çš„å­ç±»å®ä¾‹ï¼Œè¦†ç›–çˆ¶ç±»Threadçš„run()æ–¹æ³•ã€‚
 		 */
 		Thread thread = new Thread(){
 			@Override
 			public void run() {
 				while (true) {
 					/**
-					 * Thread.currentThread()»ñÈ¡µ±Ç°Ïß³ÌµÄÒıÓÃ
+					 * Thread.currentThread()è·å–å½“å‰çº¿ç¨‹çš„å¼•ç”¨
 					 */
 					System.out.println("Thread.currentThread().getName():"+Thread.currentThread().getName());
 					System.out.println("this.getName():"+this.getName());
@@ -27,8 +27,8 @@ public class TraditionalThread {
 		thread.start();
 		
 		/**
-		 * new RunnableµÄÊµÏÖÀà£¬µ÷ÓÃThreadµÄ´øRunnable²ÎÊıµÄ¹¹ÔìÆ÷£¬Îªtarget³õÊ¼»¯¡£
-		 * ÓÉThreadÀàÖĞµÄrun()·½·¨¿ÉÒÔµÃÖª£¬ÎªtargetÌá¹©ÊµÏÖ£¬¸²Ğ´RunnableµÄrun()·½·¨¡£
+		 * new Runnableçš„å®ç°ç±»ï¼Œè°ƒç”¨Threadçš„å¸¦Runnableå‚æ•°çš„æ„é€ å™¨ï¼Œä¸ºtargetåˆå§‹åŒ–ã€‚
+		 * ç”±Threadç±»ä¸­çš„run()æ–¹æ³•å¯ä»¥å¾—çŸ¥ï¼Œä¸ºtargetæä¾›å®ç°ï¼Œè¦†å†™Runnableçš„run()æ–¹æ³•ã€‚
 		 */
 		Thread runnable = new Thread(new Runnable() {
 			@Override
@@ -42,7 +42,7 @@ public class TraditionalThread {
 		runnable.start();
 		
 		/**
-		 * Í¬Ê±¸²Ğ´ThreadºÍRunnableµÄRun()·½·¨,Ö»Ö´ĞĞThreadµÄRun()·½·¨¡£
+		 * åŒæ—¶è¦†å†™Threadå’ŒRunnableçš„Run()æ–¹æ³•,åªæ‰§è¡ŒThreadçš„Run()æ–¹æ³•ã€‚
 		 * 
 		 */
 		new Thread(new Runnable() {

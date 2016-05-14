@@ -5,7 +5,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 /**
  * @author idiot
  * @version 1.0
- * @date 2016��1��27�� ����3:25:25
+ * @date 2016年1月27日 下午3:25:25
  */
 public class CacheDemo {
 	public static void main(String[] args) {
@@ -24,12 +24,12 @@ class CacheData {
 	ReentrantReadWriteLock rwl = new ReentrantReadWriteLock();
 
 	/**
-	 * ���룺�������� reader �� writer ���� ReentrantLock����ʽ���»�ȡ��ȡ����д������
-	 * ��д���̱߳��ֵ�����д�������Ѿ��ͷź󣬲��������� reader ʹ�����ǡ����⣬writer���Ի�ȡ��ȡ�������������򲻳�����
-	 * ������Ӧ�ó����У����ڵ��û�ص���Щ�ڶ�ȡ��״̬��ִ�ж�ȡ�����ķ����ڼ䱣��д����ʱ����������á�
-	 * ��� reader ��ͼ��ȡд��������ô����Զ�����óɹ���
+	 * 重入：此锁允许 reader 和 writer 按照 ReentrantLock的样式重新获取读取锁或写入锁。
+	 * 在写入线程保持的所有写入锁都已经释放后，才允许重入 reader 使用它们。此外，writer可以获取读取锁，但反过来则不成立。
+	 * 在其他应用程序中，当在调用或回调那些在读取锁状态下执行读取操作的方法期间保持写入锁时，重入很有用。
+	 * 如果 reader 试图获取写入锁，那么将永远不会获得成功。
 	 * 
-	 * �����������뻹������д��������Ϊ��ȡ������ʵ�ַ�ʽ�ǣ��Ȼ�ȡд������Ȼ���ȡ��ȡ��������ͷ�д���������ǣ��Ӷ�ȡ��������д�����ǲ����ܵġ�
+	 * 锁降级：重入还允许从写入锁降级为读取锁，其实现方式是：先获取写入锁，然后获取读取锁，最后释放写入锁。但是，从读取锁升级到写入锁是不可能的。
 	 */
 	void processCachedData() {
 		rwl.readLock().lock();

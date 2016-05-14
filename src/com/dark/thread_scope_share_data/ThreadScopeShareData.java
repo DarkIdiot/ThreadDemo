@@ -1,15 +1,14 @@
 package com.dark.thread_scope_share_data;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * Ïß³Ì°ó¶¨Êı¾İ¶ÔÏó£¬¶ÔÓÚ²»Í¬µÄÏß³Ì£¬È¡µÃ²»Í¬µÄÖµ¡££¨Ê¹ÓÃMap<Thread,Object>ÊµÏÖ£©
+ * çº¿ç¨‹ç»‘å®šæ•°æ®å¯¹è±¡ï¼Œå¯¹äºä¸åŒçš„çº¿ç¨‹ï¼Œå–å¾—ä¸åŒçš„å€¼ã€‚ï¼ˆä½¿ç”¨Map<Thread,Object>å®ç°ï¼‰
  * @author idiot
  * @version 1.0
- * @date 2016Äê1ÔÂ18ÈÕ ÏÂÎç9:23:29
+ * @date 2016å¹´1æœˆ18æ—¥ ä¸‹åˆ9:23:29
  */
 public class ThreadScopeShareData {
 	/**
@@ -32,7 +31,7 @@ public class ThreadScopeShareData {
 				@Override
 				public void run() {
 					/**
-					 * ¼ÓÈëÍ¬²½ËøÊÇÎªÁË¸ü¼Ó·½±ãµÄ¿´³öĞ§¹û¡£ÔÚ²»¼ÓÍ¬²½ËøµÄÇé¿öÏÂ£¬ºÜÄÑµÃµ½¶ş¸ö²»Í¬µÄdataÊı¾İ,ºóÒ»¸öÏß³Ì×ÜÊÇ»á¸²¸ÇÇ°ÃæµÄÏß³Ì×°ÈëµÄÊı¾İ¡£
+					 * åŠ å…¥åŒæ­¥é”æ˜¯ä¸ºäº†æ›´åŠ æ–¹ä¾¿çš„çœ‹å‡ºæ•ˆæœã€‚åœ¨ä¸åŠ åŒæ­¥é”çš„æƒ…å†µä¸‹ï¼Œå¾ˆéš¾å¾—åˆ°äºŒä¸ªä¸åŒçš„dataæ•°æ®,åä¸€ä¸ªçº¿ç¨‹æ€»æ˜¯ä¼šè¦†ç›–å‰é¢çš„çº¿ç¨‹è£…å…¥çš„æ•°æ®ã€‚
 					 */
 					synchronized (ThreadScopeShareData.class) {
 						data = new Random().nextInt();
@@ -59,7 +58,7 @@ public class ThreadScopeShareData {
 		}
 	}
 	/**
-	 * ConcurrentHashMap Ïß³Ì°²È«µÄÀà ¡¢HashMap ·ÇÏß³Ì°²È«µÄÀà£¨Ê¹ÓÃ»á³öÏÖÔàÊı¾İ£©
+	 * ConcurrentHashMap çº¿ç¨‹å®‰å…¨çš„ç±» ã€HashMap éçº¿ç¨‹å®‰å…¨çš„ç±»ï¼ˆä½¿ç”¨ä¼šå‡ºç°è„æ•°æ®ï¼‰
 	 */
 	private static Map<Thread, Object> dataMap = new ConcurrentHashMap<Thread, Object>();
 	public static void ShareDateOnlyThread(){

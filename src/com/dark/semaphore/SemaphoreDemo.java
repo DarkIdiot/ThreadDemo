@@ -7,7 +7,7 @@ import java.util.concurrent.Semaphore;
 /**
  * @author idiot
  * @version 1.0
- * @date 2016Äê1ÔÂ30ÈÕ ÉÏÎç12:30:22
+ * @date 2016å¹´1æœˆ30æ—¥ ä¸Šåˆ12:30:22
  */
 public class SemaphoreDemo {
 	public static void main(String[] args) {
@@ -25,16 +25,16 @@ public class SemaphoreDemo {
 					e.printStackTrace();
 				}
 				
-				System.out.println(Thread.currentThread().getName()+"½øÈë£¬µ±Ç°ÒÑÓĞ "+(3-semaphore.availablePermits())+"¸ö²¢·¢¡£");
+				System.out.println(Thread.currentThread().getName()+"è¿›å…¥ï¼Œå½“å‰å·²æœ‰ "+(3-semaphore.availablePermits())+"ä¸ªå¹¶å‘ã€‚");
 				try {
 					Thread.sleep((long) (Math.random()*3000));
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-				System.out.println(Thread.currentThread().getName()+"¼´½«Àë¿ª¡£");
+				System.out.println(Thread.currentThread().getName()+"å³å°†ç¦»å¼€ã€‚");
 				semaphore.release();
-				//ÏÂÃæ´úÂëÓĞÊ±ºòÖ´ĞĞµÄ²»×¼È·,ÓÉÓÚÊä³öÓï¾äºÍÉÏÃæµÄrelease()·½·¨²»ÊÇÔ­×Ó²Ù×÷.
-				System.out.println(Thread.currentThread().getName()+"ÒÑÀë¿ª£¬µ±Ç°ÒÑÓĞ "+(3-semaphore.availablePermits())+"¸ö²¢·¢¡£");
+				//ä¸‹é¢ä»£ç æœ‰æ—¶å€™æ‰§è¡Œçš„ä¸å‡†ç¡®,ç”±äºè¾“å‡ºè¯­å¥å’Œä¸Šé¢çš„release()æ–¹æ³•ä¸æ˜¯åŸå­æ“ä½œ.
+				System.out.println(Thread.currentThread().getName()+"å·²ç¦»å¼€ï¼Œå½“å‰å·²æœ‰ "+(3-semaphore.availablePermits())+"ä¸ªå¹¶å‘ã€‚");
 			});
 		}
 		executorService.shutdown();

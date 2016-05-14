@@ -7,7 +7,7 @@ import java.util.concurrent.Executors;
 /**
  * @author idiot
  * @version 1.0
- * @date 2016Äê1ÔÂ30ÈÕ ÉÏÎç12:57:32
+ * @date 2016å¹´1æœˆ30æ—¥ ä¸Šåˆ12:57:32
  */
 public class CyclicBarrierDemo {
 	public static void main(String[] args) {
@@ -21,8 +21,8 @@ public class CyclicBarrierDemo {
 					e.printStackTrace();
 				}
 				System.out.println(Thread.currentThread().getName()
-						+ "¼´½«µ½´ï¼¯ºÏµã1,µ±Ç°ÒÑÓĞ" + (barrier.getNumberWaiting() + 1)
-						+ "¸öÒÑ¾­µ½´ï¡£"+(barrier.getNumberWaiting() == 2 ? "¼´½«³ö·¢...":"ÕıÔÚµÈ´ı..."));
+						+ "å³å°†åˆ°è¾¾é›†åˆç‚¹1,å½“å‰å·²æœ‰" + (barrier.getNumberWaiting() + 1)
+						+ "ä¸ªå·²ç»åˆ°è¾¾ã€‚"+(barrier.getNumberWaiting() == 2 ? "å³å°†å‡ºå‘...":"æ­£åœ¨ç­‰å¾…..."));
 				try {
 					barrier.await();
 				} catch (Exception e) {
@@ -34,8 +34,8 @@ public class CyclicBarrierDemo {
 					e.printStackTrace();
 				}
 				System.out.println(Thread.currentThread().getName()
-						+ "¼´½«µ½´ï¼¯ºÏµã2,µ±Ç°ÒÑÓĞ" + (barrier.getNumberWaiting() + 1)
-						+ "¸öÒÑ¾­µ½´ï¡£"+(barrier.getNumberWaiting() == 2 ? "¼´½«³ö·¢...":"ÕıÔÚµÈ´ı..."));
+						+ "å³å°†åˆ°è¾¾é›†åˆç‚¹2,å½“å‰å·²æœ‰" + (barrier.getNumberWaiting() + 1)
+						+ "ä¸ªå·²ç»åˆ°è¾¾ã€‚"+(barrier.getNumberWaiting() == 2 ? "å³å°†å‡ºå‘...":"æ­£åœ¨ç­‰å¾…..."));
 				try {
 					barrier.await();
 				} catch (Exception e) {
@@ -47,8 +47,8 @@ public class CyclicBarrierDemo {
 					e.printStackTrace();
 				}
 				System.out.println(Thread.currentThread().getName()
-						+ "¼´½«µ½´ï¼¯ºÏµã3,µ±Ç°ÒÑÓĞ" + (barrier.getNumberWaiting() + 1)
-						+ "¸öÒÑ¾­µ½´ï¡£"+(barrier.getNumberWaiting() == 2 ? "¼´½«³ö·¢...":"ÕıÔÚµÈ´ı..."));
+						+ "å³å°†åˆ°è¾¾é›†åˆç‚¹3,å½“å‰å·²æœ‰" + (barrier.getNumberWaiting() + 1)
+						+ "ä¸ªå·²ç»åˆ°è¾¾ã€‚"+(barrier.getNumberWaiting() == 2 ? "å³å°†å‡ºå‘...":"æ­£åœ¨ç­‰å¾…..."));
 				try {
 					barrier.await();
 				} catch (Exception e) {

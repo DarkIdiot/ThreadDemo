@@ -11,7 +11,7 @@ import java.util.concurrent.TimeoutException;
 /**
  * @author idiot
  * @version 1.0
- * @date 2016Äê1ÔÂ26ÈÕ ÏÂÎç4:01:40
+ * @date 2016å¹´1æœˆ26æ—¥ ä¸‹åˆ4:01:40
  */
 public class CallableAndFutureDemo {
 	public static void main(String[] args) {
@@ -23,10 +23,10 @@ public class CallableAndFutureDemo {
 				return "Hello world!";
 			}
 		});
-		System.out.println("µÈ´ı½á¹û...");
+		System.out.println("ç­‰å¾…ç»“æœ...");
 		try {
-			System.out.println("½á¹û£º"+future.get());
-			System.out.println("½á¹û£º"+future.get(1, TimeUnit.SECONDS));
+			System.out.println("ç»“æœï¼š"+future.get());
+			System.out.println("ç»“æœï¼š"+future.get(1, TimeUnit.SECONDS));
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		} catch (ExecutionException e) {

@@ -2,15 +2,14 @@ package com.dark.concurrent.atomic;
 
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.function.BinaryOperator;
 
 /**
- * »ù±¾Êı¾İÔÚ±»½øĞĞ¼Ó¼õ»òÆäËû²Ù×÷ºó£¬È»ºóÈ¡³öÀ´ -- Õâ¸ö¶¯×÷¿ÉÄÜ»á³öÏÖ²¢·¢µÄÎÊÌâ¡£
- * 			ÔÚµ±Ç°Ïß³ÌÍê³É¶Ô¹²ÏíÊı¾İµÄ²Ù×÷Ö®ºó£¬ÔÚÃ»ÓĞÈ¡³öÀ´Ö®Ç°£¬ÆäËûÏß³Ì¶ÔÆä½øĞĞÁË²Ù×÷¡£¾Í»áÊ¹µÃÔ­À´µÄÏß³ÌÈ¡³öµÄÊı¾İÊÇ×Ô¼º²¢²»ÆÚÍûµÃµ½µÄ¡£
- * Òò´Ë£¬atomic°üÄÚµÄÀà¶ÔËùÓĞµÄĞ´ºÍÈ¡½øĞĞÁË°ó¶¨ºÍÍ¬²½¡£
+ * åŸºæœ¬æ•°æ®åœ¨è¢«è¿›è¡ŒåŠ å‡æˆ–å…¶ä»–æ“ä½œåï¼Œç„¶åå–å‡ºæ¥ -- è¿™ä¸ªåŠ¨ä½œå¯èƒ½ä¼šå‡ºç°å¹¶å‘çš„é—®é¢˜ã€‚
+ * 			åœ¨å½“å‰çº¿ç¨‹å®Œæˆå¯¹å…±äº«æ•°æ®çš„æ“ä½œä¹‹åï¼Œåœ¨æ²¡æœ‰å–å‡ºæ¥ä¹‹å‰ï¼Œå…¶ä»–çº¿ç¨‹å¯¹å…¶è¿›è¡Œäº†æ“ä½œã€‚å°±ä¼šä½¿å¾—åŸæ¥çš„çº¿ç¨‹å–å‡ºçš„æ•°æ®æ˜¯è‡ªå·±å¹¶ä¸æœŸæœ›å¾—åˆ°çš„ã€‚
+ * å› æ­¤ï¼ŒatomicåŒ…å†…çš„ç±»å¯¹æ‰€æœ‰çš„å†™å’Œå–è¿›è¡Œäº†ç»‘å®šå’ŒåŒæ­¥ã€‚
  * @author idiot
  * @version 1.0
- * @date 2016Äê1ÔÂ25ÈÕ ÉÏÎç9:30:41
+ * @date 2016å¹´1æœˆ25æ—¥ ä¸Šåˆ9:30:41
  */
 public class AtomicDemo {
 	/**
@@ -42,9 +41,9 @@ public class AtomicDemo {
 						int result = ai.get();
 						System.out.println(Thread.currentThread().getName()+" : "+"result = "+ result+" , AtomicInteger = "+ai.get());
 						/* 
-						 µ¥Ïß³ÌÏÂ, compareAndSet·µ»ØÓÀÔ¶Îªtrue,
-						 ¶àÏß³ÌÏÂ, ÔÚÓëresult½øĞĞcompareÊ±, ai¿ÉÄÜ±»ÆäËûÏß³ÌsetÁËĞÂÖµ,ÕâÊ±ĞèÒªÖØĞÂÔÙÈ¡Ò»±éÔÙ±È½Ï,Èç¹û»¹ÊÇÃ»ÓĞÄÃµ½×îĞÂµÄÖµ, ÔòÒ»Ö±Ñ­»·ÏÂÈ¥, Ö±µ½ÄÃµ½×îĞÂµÄÄÇ¸öÖµ*/
-						flag = ai.compareAndSet(result, result+1); // result + 1 ¾Í³öÏÖÁË²¢·¢µÄÎÊÌâ¡£
+						 å•çº¿ç¨‹ä¸‹, compareAndSetè¿”å›æ°¸è¿œä¸ºtrue,
+						 å¤šçº¿ç¨‹ä¸‹, åœ¨ä¸resultè¿›è¡Œcompareæ—¶, aiå¯èƒ½è¢«å…¶ä»–çº¿ç¨‹setäº†æ–°å€¼,è¿™æ—¶éœ€è¦é‡æ–°å†å–ä¸€éå†æ¯”è¾ƒ,å¦‚æœè¿˜æ˜¯æ²¡æœ‰æ‹¿åˆ°æœ€æ–°çš„å€¼, åˆ™ä¸€ç›´å¾ªç¯ä¸‹å», ç›´åˆ°æ‹¿åˆ°æœ€æ–°çš„é‚£ä¸ªå€¼*/
+						flag = ai.compareAndSet(result, result+1); // result + 1 å°±å‡ºç°äº†å¹¶å‘çš„é—®é¢˜ã€‚
 						System.out.println(Thread.currentThread().getName()+" : "+"flag = "+ flag+" , result = "+ result+" , AtomicInteger = "+ai.get());
 					}while(!flag);
 				}
@@ -67,7 +66,7 @@ public class AtomicDemo {
 					boolean flag;
 					do {
 						State state =  init.get();
-						State temp = init.accumulateAndGet(State.INITIALIZING,(s,u) -> u );  		//Ê¹ÓÃlambda±í´ïÊ½¡£ 
+						State temp = init.accumulateAndGet(State.INITIALIZING,(s,u) -> u );  		//ä½¿ç”¨lambdaè¡¨è¾¾å¼ã€‚ 
 						System.out.println("State : "+temp);
 						System.out.println(Thread.currentThread().getName()+" : "+"state = "+ state+" , AtomicReference = "+init.get());
 						flag = init.compareAndSet(state, State.INITIALIZED);

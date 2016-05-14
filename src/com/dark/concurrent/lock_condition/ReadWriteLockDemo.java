@@ -5,7 +5,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 /**
  * @author idiot
  * @version 1.0
- * @date 2016Äê1ÔÂ26ÈÕ ÏÂÎç5:26:29
+ * @date 2016å¹´1æœˆ26æ—¥ ä¸‹åˆ5:26:29
  */
 public class ReadWriteLockDemo {
 	public static void main(String[] args) {
@@ -23,7 +23,7 @@ public class ReadWriteLockDemo {
 	}
 }
 /**
- *	¶ÁĞ´Ëø:¶à¸ö¶ÁËø²»»¥³â,¶ÁËøÓëĞ´Ëø»¥³â,Ğ´ËøÓëĞ´Ëø»¥³â,ÕâÊÇÓÉjvm¿ØÖÆµÄ¡£
+ *	è¯»å†™é”:å¤šä¸ªè¯»é”ä¸äº’æ–¥,è¯»é”ä¸å†™é”äº’æ–¥,å†™é”ä¸å†™é”äº’æ–¥,è¿™æ˜¯ç”±jvmæ§åˆ¶çš„ã€‚
  */
 class SharedData{
 	private Object data = null;

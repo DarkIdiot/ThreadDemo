@@ -4,16 +4,14 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import javax.print.attribute.standard.SheetCollate;
-
 /**
  * @author idiot
  * @version 1.0
- * @date 2016Äê1ÔÂ30ÈÕ ÉÏÎç1:16:09
+ * @date 2016å¹´1æœˆ30æ—¥ ä¸Šåˆ1:16:09
  */
 public class CountDownLatchDemo {
 	/**
-	 * ÊµÏÖÒ»¸öÏß³ÌÍ¨Öª¶à¸öÏß³Ì(¶ÌÅÜ,ÆğµãÍ³Ò»)
+	 * å®ç°ä¸€ä¸ªçº¿ç¨‹é€šçŸ¥å¤šä¸ªçº¿ç¨‹(çŸ­è·‘,èµ·ç‚¹ç»Ÿä¸€)
 	 */
 	public static void orderDemo() {
 		ExecutorService service = Executors.newCachedThreadPool();
@@ -46,7 +44,7 @@ public class CountDownLatchDemo {
 	}
 
 	/**
-	 * ÊµÏÖ¶à¸öÏß³ÌÍ¨ÖªÒ»¸öÏß³Ì(³¤ÅÜ,ÖÕµã¼ÆÊ±)
+	 * å®ç°å¤šä¸ªçº¿ç¨‹é€šçŸ¥ä¸€ä¸ªçº¿ç¨‹(é•¿è·‘,ç»ˆç‚¹è®¡æ—¶)
 	 */
 	public static void answerDemo() {
 		ExecutorService service = Executors.newCachedThreadPool();

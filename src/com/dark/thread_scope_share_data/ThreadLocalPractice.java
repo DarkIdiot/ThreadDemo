@@ -5,7 +5,6 @@ import java.util.Random;
 /**
  * @author idiot
  * @version 1.0
- * @date 2016��1��19�� ����12:16:22
  */
 public class ThreadLocalPractice {
 	/**
@@ -77,7 +76,7 @@ public class ThreadLocalPractice {
 		}
 	}
 	/**
-	 * advance ThreadLocal demo (by used hungry singleton designer pattern )(struts 2 ��action�����˼��.)
+	 * advance ThreadLocal demo (by used hungry singleton designer pattern )(struts 2 锟斤拷action锟斤拷锟斤拷锟剿硷拷锟�)
 	 */
 	static class  ThreadData{
 		

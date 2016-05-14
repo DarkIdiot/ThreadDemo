@@ -8,11 +8,11 @@ import java.util.TimerTask;
 /**
  * @author idiot
  * @version 1.0
- * @date 2016Äê1ÔÂ16ÈÕ ÏÂÎç10:25:47
+ * @date 2016å¹´1æœˆ16æ—¥ ä¸‹åˆ10:25:47
  */
 public class TraditionalTimer {
 	/**
-	 * ¼òµ¥µÄ¶¨Ê±Æ÷demo
+	 * ç®€å•çš„å®šæ—¶å™¨demo
 	 */
 	public static void timerDemo4Delay() {
 		new Timer().schedule(new TimerTask(){
@@ -39,7 +39,7 @@ public class TraditionalTimer {
 	public static void timerDemo4SpecifiedDate() {
 		/**
 		 * new Timer().schedule(TimerTask timerTask,Date date);
-		 * °´ÕÕdateÖ¸¶¨µÄÊ±¼äÆô¶¯
+		 * æŒ‰ç…§dateæŒ‡å®šçš„æ—¶é—´å¯åŠ¨
 		 */
 		new Timer().schedule(new TimerTask() {
 			@Override
@@ -49,12 +49,12 @@ public class TraditionalTimer {
 			}
 		},
 		/**
-		 * 5Ãëºó
+		 * 5ç§’å
 		 */
 		new Date(System.currentTimeMillis()+ 1000*5));
 		/**
 		 * new Timer().schedule(TimerTask timerTask,Date date,Long period);
-		 * °´ÕÕdateÖ¸¶¨µÄÊ±¼äÆô¶¯£¬²¢ÇÒ¼ä¸ôperiodºÁÃëºóÔÙ´ÎÔËĞĞ
+		 * æŒ‰ç…§dateæŒ‡å®šçš„æ—¶é—´å¯åŠ¨ï¼Œå¹¶ä¸”é—´éš”periodæ¯«ç§’åå†æ¬¡è¿è¡Œ
 		 */
 		new Timer().schedule(new TimerTask() {
 			@Override
@@ -64,7 +64,7 @@ public class TraditionalTimer {
 			}
 		},
 		/**
-		 * 8Ãëºó
+		 * 8ç§’å
 		 */
 		new Date(System.currentTimeMillis()+ 1000*8),2000L);
 		

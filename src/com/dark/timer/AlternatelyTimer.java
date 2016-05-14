@@ -7,11 +7,11 @@ import java.util.TimerTask;
 /**
  * @author idiot
  * @version 1.0
- * @date 2016Äê1ÔÂ16ÈÕ ÏÂÎç10:39:59
+ * @date 2016å¹´1æœˆ16æ—¥ ä¸‹åˆ10:39:59
  */
 public class AlternatelyTimer {
 	/**
-	 * ÔÚTimerTaskÖĞ¶¨ÒåĞÂµÄTimer£¬²¢×°Èëµ±Ç°µÄTimerTask»áÅ×³öÒì³£¡£
+	 * åœ¨TimerTaskä¸­å®šä¹‰æ–°çš„Timerï¼Œå¹¶è£…å…¥å½“å‰çš„TimerTaskä¼šæŠ›å‡ºå¼‚å¸¸ã€‚
 	 */
 	public static void errorDemo() {
 		new Timer().schedule(new TimerTask() {
@@ -21,7 +21,7 @@ public class AlternatelyTimer {
 				System.out.println("AnonymousTimerTask:Timer_Bombing...");
 				/**
 				 * java.lang.IllegalStateException: Task already scheduled or cancelled
-				 * TimerTaskÊ¹ÓÃ¹ıºó¾Í²»ÄÜÔÙ±»×°ÈëTimer£¬±ØĞëÖØĞÂnew³öÀ´Ò»¸öĞÂµÄTimerTask£¬·ñÔò»á³öÏÖÉÏÃæµÄÒì³£
+				 * TimerTaskä½¿ç”¨è¿‡åå°±ä¸èƒ½å†è¢«è£…å…¥Timerï¼Œå¿…é¡»é‡æ–°newå‡ºæ¥ä¸€ä¸ªæ–°çš„TimerTaskï¼Œå¦åˆ™ä¼šå‡ºç°ä¸Šé¢çš„å¼‚å¸¸
 				 */
 				// == error code demo === new Timer().schedule(this, 2000);
 			}
@@ -37,7 +37,7 @@ public class AlternatelyTimer {
 		}
 	}
 	/**
-	 *  Í¨¹ıstatic±äÁ¿±æÊ¶£¬·Ö±ğ¶¨Ê±Í¬Ò»¸öTimerTask demo
+	 *  é€šè¿‡staticå˜é‡è¾¨è¯†ï¼Œåˆ†åˆ«å®šæ—¶åŒä¸€ä¸ªTimerTask demo
 	 */
 	static class CustomTimerTask extends TimerTask{
 		static int count = 0; 
@@ -65,7 +65,7 @@ public class AlternatelyTimer {
 		
 	}
 	/**
-	 * ·Ö±ğ´´½¨¶ş¸öTimerTaskµÄ×ÓÀà£¬ÔÚ¸÷×ÔµÄrun()·½·¨ÖĞ·Ö±ğÊµÀı»¯Ò»¸öTimer²¢°ó¶¨ÆäËûµÄTimerTask£¬ÊµÏÖÁË½»»¥Ê½µÄ¶¨Ê±ÈÎÎñ¡£
+	 * åˆ†åˆ«åˆ›å»ºäºŒä¸ªTimerTaskçš„å­ç±»ï¼Œåœ¨å„è‡ªçš„run()æ–¹æ³•ä¸­åˆ†åˆ«å®ä¾‹åŒ–ä¸€ä¸ªTimerå¹¶ç»‘å®šå…¶ä»–çš„TimerTaskï¼Œå®ç°äº†äº¤äº’å¼çš„å®šæ—¶ä»»åŠ¡ã€‚
 	 */
 	static class Custom1TimerTask extends TimerTask{
 		@Override

@@ -9,7 +9,7 @@ import java.util.concurrent.ArrayBlockingQueue;
  *	Examine	element()				peek()				not applicable		not applicable
  * @author idiot
  * @version 1.0
- * @date 2016Äê2ÔÂ1ÈÕ ÏÂÎç10:57:59
+ * @date 2016å¹´2æœˆ1æ—¥ ä¸‹åˆ10:57:59
  */
 public class ArrayBlockingQueueDemo {
 	public static void main(String[] args) {

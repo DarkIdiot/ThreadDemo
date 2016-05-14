@@ -7,7 +7,7 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * @author idiot
  * @version 1.0
- * @date 2016Äê1ÔÂ29ÈÕ ÏÂÎç3:43:29
+ * @date 2016å¹´1æœˆ29æ—¥ ä¸‹åˆ3:43:29
  */
 public class BoundedBufferDemo {
 	public static void main(String[] args) {
@@ -35,12 +35,12 @@ public class BoundedBufferDemo {
 	}
 }
 /**
- *	¿É×èÈûµÄÑ­»·¶ÓÁĞ 
+ *	å¯é˜»å¡çš„å¾ªç¯é˜Ÿåˆ— 
  */
 class BoundedBuffer {
 	final Lock lock = new ReentrantLock();
 	/**
-	 * ÎªÊ²Ã´·ÅÈëÁË2¸öCondition.Èç¹ûÊ¹ÓÃÒ»¸öCondition»á³öÏÖÊ²Ã´ÎÊÌâ£¿(µ±ÓĞÍ¬Ê±ÓĞ¶à¸ö¶Á¡¢Ğ´Ïß³ÌµÄÊ±ºò»á³öÏÖÎÊÌâ)
+	 * ä¸ºä»€ä¹ˆæ”¾å…¥äº†2ä¸ªCondition.å¦‚æœä½¿ç”¨ä¸€ä¸ªConditionä¼šå‡ºç°ä»€ä¹ˆé—®é¢˜ï¼Ÿ(å½“æœ‰åŒæ—¶æœ‰å¤šä¸ªè¯»ã€å†™çº¿ç¨‹çš„æ—¶å€™ä¼šå‡ºç°é—®é¢˜)
 	 */
 	final Condition notFull = lock.newCondition();
 	final Condition notEmpty = lock.newCondition();

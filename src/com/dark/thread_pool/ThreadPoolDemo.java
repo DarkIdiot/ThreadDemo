@@ -8,12 +8,12 @@ import java.util.concurrent.TimeUnit;
 /**
  * @author idiot
  * @version 1.0
- * @date 2016Äê1ÔÂ26ÈÕ ÉÏÎç10:20:17
+ * @date 2016å¹´1æœˆ26æ—¥ ä¸Šåˆ10:20:17
  */
 public class ThreadPoolDemo {
 	/**
 	 * FixedThreadPool Demo
-	 * 	¹Ì¶¨ÊıÁ¿µÄÏß³Ì³Ø
+	 * 	å›ºå®šæ•°é‡çš„çº¿ç¨‹æ± 
 	 */
 	public static void fixedThreadPoolDemo() {
 		ExecutorService fixedThreadPool = Executors.newFixedThreadPool(3);
@@ -30,7 +30,7 @@ public class ThreadPoolDemo {
 	
 	/**
 	 * CatchThreadPool Demo
-	 * 	»º´æµÄÏß³Ì³Ø£¬Ã¿Ò»¸öĞÂÈÎÎñ¶¼»áĞÂnewÒ»¸öÏß³Ì¡£µ±Ïß³Ì½áÊø¾Í´Ó³Ø×ÓÖĞÒÆ³ıÏß³Ì
+	 * 	ç¼“å­˜çš„çº¿ç¨‹æ± ï¼Œæ¯ä¸€ä¸ªæ–°ä»»åŠ¡éƒ½ä¼šæ–°newä¸€ä¸ªçº¿ç¨‹ã€‚å½“çº¿ç¨‹ç»“æŸå°±ä»æ± å­ä¸­ç§»é™¤çº¿ç¨‹
 	 */
 	public static void catchThreadPoolDemo() {
 		ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
@@ -47,7 +47,7 @@ public class ThreadPoolDemo {
 	}
 	/**
 	 * ScheduledThreadPool Demo
-	 * ¼Æ»®µÄÏß³Ì³Ø£¬Ïß³ÌÔÚÑÓ³ÙºóÖ´ĞĞ
+	 * è®¡åˆ’çš„çº¿ç¨‹æ± ï¼Œçº¿ç¨‹åœ¨å»¶è¿Ÿåæ‰§è¡Œ
 	 */
 	public static void scheduledThreadPoolDemo(){
 		ScheduledExecutorService scheduledThreadPool = Executors.newScheduledThreadPool(3);
@@ -67,7 +67,7 @@ public class ThreadPoolDemo {
 	}
 	/**
 	 * SingleThreadExecutor Demo
-	 * µ¥Ò»Ïß³Ì³Ø£¬µ±Ïß³ÌËÀµôºó¾ÍÖØĞÂÆô¶¯¸ÃÏß³Ì
+	 * å•ä¸€çº¿ç¨‹æ± ï¼Œå½“çº¿ç¨‹æ­»æ‰åå°±é‡æ–°å¯åŠ¨è¯¥çº¿ç¨‹
 	 */
 	public static void singleThreadExecutorDemo(){
 		ExecutorService singleThreadExecutor = Executors.newSingleThreadExecutor();

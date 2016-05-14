@@ -3,7 +3,7 @@ package com.dark.syn_volatile;
 /**
  * @author idiot
  * @version 1.0
- * @date 2016Äê2ÔÂ17ÈÕ ÉÏÎç11:27:08
+ * @date 2016å¹´2æœˆ17æ—¥ ä¸Šåˆ11:27:08
  */
 public class VolatileDemo {
 	public static void main(String args[]) throws InterruptedException {

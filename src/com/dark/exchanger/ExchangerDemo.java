@@ -5,12 +5,12 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * Exchanger�����������߳�֮�佻�����ݣ�ֻ����2���̣߳�����֧�ָ�����߳�֮�以�����ݡ�
- * 		���߳�A����Exchange�����exchange()������������������״̬��ֱ���߳�BҲ������
- * 		exchange()������Ȼ�����̰߳�ȫ�ķ�ʽ�������ݣ�֮���߳�A��B��������
+ * Exchanger锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟竭筹拷之锟戒交锟斤拷锟斤拷锟捷ｏ拷只锟斤拷锟斤拷2锟斤拷锟竭程ｏ拷锟斤拷锟斤拷支锟街革拷锟斤拷锟斤拷叱锟街拷浠ワ拷锟斤拷锟斤拷荨锟�
+ * 		锟斤拷锟竭筹拷A锟斤拷锟斤拷Exchange锟斤拷锟斤拷锟絜xchange()锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷状态锟斤拷直锟斤拷锟竭筹拷B也锟斤拷锟斤拷锟斤拷
+ * 		exchange()锟斤拷锟斤拷锟斤拷然锟斤拷锟斤拷锟竭程帮拷全锟侥凤拷式锟斤拷锟斤拷锟斤拷锟捷ｏ拷之锟斤拷锟竭筹拷A锟斤拷B锟斤拷锟斤拷锟斤拷锟斤拷
  * @author idiot
  * @version 1.0
- * @date 2016��1��30�� ����1:26:08
+ * @date 2016锟斤拷1锟斤拷30锟斤拷 锟斤拷锟斤拷1:26:08
  */
 public class ExchangerDemo {
 	public static void main(String[] args) {

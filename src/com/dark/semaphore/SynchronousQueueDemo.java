@@ -4,12 +4,12 @@ import java.util.concurrent.SynchronousQueue;
 /**
  * @author idiot
  * @version 1.0
- * @date 2016Äê3ÔÂ5ÈÕ ÉÏÎç19:44:22
+ * @date 2016å¹´3æœˆ5æ—¥ ä¸Šåˆ19:44:22
  */
 public class SynchronousQueueDemo {
 	/**
-	 * SynchronousQueue Í¬²½¶ÓÁĞ,which each insert operation must wait for a corresponding remove operation by another thread.
-	 * note:Ö±½Óinsert»á×èÈûÏß³Ì.
+	 * SynchronousQueue åŒæ­¥é˜Ÿåˆ—,which each insert operation must wait for a corresponding remove operation by another thread.
+	 * note:ç›´æ¥insertä¼šé˜»å¡çº¿ç¨‹.
 	 */
 	public static void main(String[] args) {
 		SynchronousQueue<String> queue = new SynchronousQueue<String>();
