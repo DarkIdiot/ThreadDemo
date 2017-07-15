@@ -3,7 +3,8 @@ package com.dark.array_blocking_queue;
 import java.util.concurrent.ArrayBlockingQueue;
 
 /**
- * 			Throws exception		Special value		Blocks				Times out		
+ * @see java.util.concurrent.BlockingQueue
+ * 			Throws exception		Special value		Blocks				Special value&Times out		
  *	Insert	add(e)					offer(e)			put(e)				offer(e, time, unit)
  *	Remove	remove()				poll()				take()				poll(time, unit)
  *	Examine	element()				peek()				not applicable		not applicable
