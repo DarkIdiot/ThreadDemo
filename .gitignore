@@ -1,9 +1,7 @@
-﻿#不忽略.gitignore文件
-!.gitignore	diff=astextplain
+﻿
 # 忽略 build/ 目录下的所有文件
-
-build/  diff=astextplain
+build/  
 # 忽略 bin/ 目录下的所有文件
-bin/    diff=astextplain
+bin/    
 # 忽略 lib/ 目录下的所有文件
-lib/    diff=astextplain
+lib/   
