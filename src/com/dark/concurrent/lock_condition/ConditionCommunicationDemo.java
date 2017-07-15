@@ -36,7 +36,6 @@ class Business {
 
 		lock.lock();
 		try {
-			System.out.println("==main==");
 			while (flag) {  //or if
 				conditionMain.await();
 			}
@@ -61,7 +60,6 @@ class Business {
 
 		lock.lock();
 		try {
-			System.out.println("==sub==");
 			while (!flag) { //or if
 				conditionSub.await();
 			}
