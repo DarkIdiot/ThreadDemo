@@ -4,6 +4,8 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
+ * Both Lock and synchronized temporarily allow others to obtain the lock when they are waiting. 
+ * To stop waiting, a thread have to re-acquire the lock.
  * @author idiot
  * @version 1.0
  * @date 2016年1月28日 下午5:23:35
@@ -34,6 +36,7 @@ class Business {
 
 		lock.lock();
 		try {
+			System.out.println("==main==");
 			while (flag) {  //or if
 				conditionMain.await();
 			}
@@ -58,6 +61,7 @@ class Business {
 
 		lock.lock();
 		try {
+			System.out.println("==sub==");
 			while (!flag) { //or if
 				conditionSub.await();
 			}
