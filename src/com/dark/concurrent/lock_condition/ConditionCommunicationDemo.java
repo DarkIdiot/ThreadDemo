@@ -34,7 +34,7 @@ class Business {
 
 		lock.lock();
 		try {
-			while (flag) {
+			while (flag) {  //or if
 				conditionMain.await();
 			}
 			for (int i = 0; i < 5; i++) {
@@ -58,10 +58,10 @@ class Business {
 
 		lock.lock();
 		try {
-			while (!flag) {
+			while (!flag) { //or if
 				conditionSub.await();
 			}
-			for (int i = 0; i < 10; i++) {
+			for (int i = 0; i < 5; i++) {
 				System.out.println(Thread.currentThread().getName()+" sub thread sequence of " + i + ",loop of "+ j);
 			}
 			flag = false;
