@@ -22,7 +22,7 @@ public class ExchangerDemo {
 				System.out.println(Thread.currentThread().getName()+" will exchange the "+str+" out");
 				Thread.sleep((long) (Math.random()*5000));
 				String data = (String) exchanger.exchange(str);
-				System.out.println(Thread.currentThread().getName()+" has exchange the "+data+" out");
+				System.out.println(Thread.currentThread().getName()+" has exchange the "+data+" in");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -33,7 +33,7 @@ public class ExchangerDemo {
 				System.out.println(Thread.currentThread().getName()+" will exchange the "+str+" out");
 				Thread.sleep((long) (Math.random()*5000));
 				String data = (String) exchanger.exchange(str);
-				System.out.println(Thread.currentThread().getName()+" has exchange the "+data+" out");
+				System.out.println(Thread.currentThread().getName()+" has exchange the "+data+" in");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -44,7 +44,7 @@ public class ExchangerDemo {
 				System.out.println(Thread.currentThread().getName()+" will exchange the "+str+" out");
 				Thread.sleep((long) (Math.random()*5000));
 				String data = (String) exchanger.exchange(str);
-				System.out.println(Thread.currentThread().getName()+" has exchange the "+data+" out");
+				System.out.println(Thread.currentThread().getName()+" has exchange the "+data+" in");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -55,7 +55,7 @@ public class ExchangerDemo {
 				System.out.println(Thread.currentThread().getName()+" will exchange the "+str+" out");
 				Thread.sleep((long) (Math.random()*5000));
 				String data = (String) exchanger.exchange(str);
-				System.out.println(Thread.currentThread().getName()+" has exchange the "+data+" out");
+				System.out.println(Thread.currentThread().getName()+" has exchange the "+data+" in");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
